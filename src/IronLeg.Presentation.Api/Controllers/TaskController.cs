@@ -1,11 +1,15 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IronLeg.Presentation.Api.Controllers
 {
-  [Route("api/[controller]")]
+  
+  [ApiVersion(1)]
+  [Route("api/v{v:apiVersion}/[controller]")]
   [ApiController]
   public class TaskController : Controller 
   {
+
     [HttpGet("")]
     public IActionResult TestEndpoint()
     {
